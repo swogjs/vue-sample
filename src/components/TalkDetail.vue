@@ -1,4 +1,4 @@
-<<template>
+<template>
     <div id="talkDetail">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -22,7 +22,7 @@
         </div>
     </div>
 </template>
-<<script>
+<script>
 const qs = require('qs');
 export default {
   name: "talkDetail",

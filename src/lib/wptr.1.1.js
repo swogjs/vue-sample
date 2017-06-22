@@ -213,4 +213,5 @@ var WebPullToRefresh = (function() {
 
 })();
 
+//Vue 에서 외부 라이브러리 사용시 모듈로 정의하기 위해 아래 문구 필수 삽입
 export default WebPullToRefresh

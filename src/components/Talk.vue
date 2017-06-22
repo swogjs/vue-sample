@@ -30,17 +30,21 @@
 </template>
 
 <script>
+//페이징 컴포넌트 삽입
 import pagination from '@/components/pagination'
+//pull to reflash 라이브러리 삽입
 import wptr from '../lib/wptr.1.1'
 
+//서버에 parameter 전송을 위한 라이브러리 삽입 
 const qs = require('qs')
+//날짜 계산을 위한 라이브러리 삽입 
 const moment = require('moment')
-
-
 
 export default {
   name: 'talk',
+  //전달받는 파라메터 선언 
   prop:['page'],
+  //컴포넌트에서 사용하는 데이터 정의
   data:function() {
     return {
       posts: [],
@@ -48,6 +52,7 @@ export default {
       totalRows : 0
     }
   },
+  //라이프사이클 중 컴포넌트 객체가 생성될때 후킹 
   created: function(){
     
       if(this.$route.params.page != undefined) {
@@ -55,17 +60,21 @@ export default {
       } 
       this.getPostList(this.currentPage)
   },
+  //라이프사이클 중 Vue 객체가 마운트 될때 후킹
   mounted: function(){
     wptr.init( {
       loadingFunction: this.pullToReflashLoading
     } );
   },
+  //컴포넌트 안에서 계산 로직 정의
   computed: {
     hasResult: function () {
       return this.posts.length > 0
     }
   },
+  //컴포넌트 실행 함수 정의
   methods: {
+    //게시글 목록 조회 함수
     getPostList: function (page) {
       this.$http.post(`${this.$baseURI}/sample/getTalkList.json`, qs.stringify({page:page}))
       .then(result => {
@@ -74,10 +83,12 @@ export default {
           document.body.scrollTop = 0;
       })
     },
+    //게시글에 new 뱃지 표시 판단함수
     isNew: function(date){
         let checkDay = moment(new Date(),'YYYY-MM-DD').diff(date, 'day')
         return (checkDay < 2) ? true : false
     },
+    //pull to reflash 함수
     pullToReflashLoading: function(){
         return new Promise((resolve, reject) => {
           this.getPostList(this.currentPage)
@@ -85,11 +96,14 @@ export default {
         })
     }
   },
+  //데이터 변화 추적 정의
   watch: {
+    //현재페이지 데이터 값이 바뀌었을 경우 처리 정의
     currentPage: function(val, oldVal){
         this.getPostList(val)
     }
   },
+  //자식 컴포넌트 정의
   components: {
     'pagination': pagination
   }

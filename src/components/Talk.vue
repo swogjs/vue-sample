@@ -244,8 +244,8 @@ body {
 	min-height: 100%;
 	z-index: 20;
   text-align: left;
-	-webkit-backface-visibility: hidden;
-	-webkit-perspective: 1000;
+	backface-visibility: hidden;
+	perspective: 1000;
 }
 
 .ptr-loading #content, .ptr-reset #content,

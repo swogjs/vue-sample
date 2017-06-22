@@ -50,6 +50,8 @@ export default {
 <style>
 #talkDetail{
     max-width: 100%;
+   	background: #fff;
+
 }
 .btn-list{
     float: right;

@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="list-group">
-            <a href="javascript://" class="list-group-item " v-for="cmt in post.commemts">
+            <a href="javascript://" class="list-group-item " v-for="cmt in post.commemts" :key="cmt.date">
                 <h4 class="list-group-item-heading">{{cmt.writer}} <span class="cmtDate">{{cmt.date}}</span></h4>
                 <p class="list-group-item-text cmtBody" v-html="cmt.comment"></p>
             </a>
@@ -36,7 +36,10 @@ export default {
   created: function(){
     this.getPost(this.seq)
   },
-  methods : {
+  mounted: function(){
+    $('#bs-example-navbar-collapse-1').collapse('hide')
+  },
+  methods: {
       getPost : function(seq){
         this.$http.post(`${this.$baseURI}/sample/getTalkDetail.json`, qs.stringify({seq:seq}))
         .then(result => this.post = result.data.payload.post)
@@ -51,7 +54,11 @@ export default {
 #talkDetail{
     max-width: 100%;
    	background: #fff;
-
+	position: relative;
+	top: 0px;
+	left: 0;
+	width: 100%;
+	z-index: 10;
 }
 .btn-list{
     float: right;

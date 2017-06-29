@@ -22,7 +22,7 @@
               </router-link>
             </li>
             <nav class="pagingNav">
-              <pagination size="md" :total-rows="totalRows" v-model="currentPage" :per-page="16" />
+              <pagination size="md" :total-rows="totalRows" v-model="currentPage" :per-page="16" ></pagination>
             </nav>
       </div>
     </div>
@@ -64,7 +64,8 @@ export default {
   mounted: function(){
     wptr.init( {
       loadingFunction: this.pullToReflashLoading
-    } );
+    } )
+    $('#bs-example-navbar-collapse-1').collapse('hide')
   },
   //컴포넌트 안에서 계산 로직 정의
   computed: {
@@ -136,13 +137,13 @@ html, body {
 }
 
 body {
-	background: #5f5f5f !important;
+  background: #5f5f5f !important;
 	margin: 0;
 }
 
 #ptr {
-	position: absolute;
-	top: 0;
+	position: relative;
+	top: 0px;
 	left: 0;
 	width: 100%;
 	color: #fff;

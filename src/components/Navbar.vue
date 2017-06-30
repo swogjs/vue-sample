@@ -58,6 +58,6 @@ export default {
 </script>
 <style>
 .navbar{
-    margin-bottom: 0;
+    margin-bottom: 0px !important;
 }
 </style>

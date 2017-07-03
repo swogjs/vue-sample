@@ -50,7 +50,8 @@ export default {
                     {to: {name:'Talk'}, name: 'TalkTalk' }
                 ] 
               },
-              { to: {name: 'Todos'}, name: 'Todos', child:[] }
+              { to: {name: 'Todos'}, name: 'Todos', child:[] },
+              { to: {name: 'Charts'}, name: 'Charts', child:[] },
           ]
       }
   }

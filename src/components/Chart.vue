@@ -16,6 +16,22 @@
                 <canvas id="myChart2" ></canvas>
             </div>
         </div>        
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Chart3 - mixed</h3>
+            </div>
+            <div class="panel-body">
+                <canvas id="myChart3" ></canvas>
+            </div>
+        </div>        
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Chart4 - scatter</h3>
+            </div>
+            <div class="panel-body">
+                <canvas id="myChart4" ></canvas>
+            </div>
+        </div>        
     </div>    
 </template>
 <script>
@@ -75,12 +91,45 @@ export default {
                         pointHoverBorderColor:"rgb(54, 162, 235)"
                     }
                 ]
-            }   
+            },
+            chart_data3 : {
+                labels:["January","February","March","April"],
+                datasets:[
+                    {
+                        "label":"Bar Dataset",
+                        "data":[10,30,20,40],
+                        "borderColor":"rgb(255, 99, 132)",
+                        "backgroundColor":"rgba(255, 99, 132, 0.2)"
+                    },
+                    {
+                        "label":"Line Dataset",
+                        "data":[10,30,20,40],
+                        "type":"line",
+                        "fill":false,
+                        "borderColor":"rgb(54, 162, 235)"
+                    }
+                ]            
+            },
+            chart_data4:{
+                datasets: [{
+                    label: 'Scatter Dataset',
+                    data: [{
+                        x: -10,
+                        y: 0
+                    }, {
+                        x: 0,
+                        y: 10
+                    }, {
+                        x: 10,
+                        y: 5
+                    }]
+                }]                
+            }
         }
     },
     mounted: function(){
         $('#bs-example-navbar-collapse-1').collapse('hide')
-        
+        //bar
         var ctx1 = $('#myChart1')
         var myChart1 = new Chart(ctx1, {
             type: 'bar',
@@ -96,6 +145,7 @@ export default {
             }
         })
 
+        //radar
         var ctx2 = $('#myChart2')
         var myChart2 = new Chart(ctx2, {
             type: 'radar',
@@ -110,6 +160,40 @@ export default {
                 }
             }
         })
+
+        //mixed
+        var ctx3 = $('#myChart3')
+        var myChart3 = new Chart(ctx3, {
+            type: 'bar',
+            data: this.chart_data3,
+            options: {
+                maintainAspectRatio: false,
+                scales:{
+                    yAxes:[{
+                        ticks:{
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        })
+
+        //scatter
+        var ctx4 = $('#myChart4')
+        var myChart4 = new Chart(ctx4, {
+            type: 'scatter',
+            data: this.chart_data4,
+            options: {
+                maintainAspectRatio: false,
+                scales:{
+                    xAxes:[{
+                        type: 'linear',
+                        position: 'bottom'
+                    }]
+                }
+            }
+        })
+
     }
 }
 </script>

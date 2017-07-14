@@ -45,7 +45,7 @@
             <span :class="page-link">&hellip;</span>
         </li>
 
-        <li class="page-item" v-for="_,index in pageLinks" :key="index">
+        <li class="page-item" v-for="_, index in pageLinks" :key="index">
             <a role="button"
                :class="['page-link',{disabled},isActive(index + diff)?'active':'',isActive(index + diff)?'':'hidden-xs-down']"
                :disabled="disabled"

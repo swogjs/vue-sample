@@ -42,10 +42,10 @@
         </li>
 
         <li v-if="showPrev" class="page-item disabled" role="seperator">
-            <span :class="page-link">&hellip;</span>
+             <span class="page-link">&hellip;</span>
         </li>
 
-        <li class="page-item" v-for="_, index in pageLinks" :key="index">
+        <li class="page-item" v-for="_, index in pageLinks" v-bind:key="index">
             <a role="button"
                :class="['page-link',{disabled},isActive(index + diff)?'active':'',isActive(index + diff)?'':'hidden-xs-down']"
                :disabled="disabled"
@@ -62,7 +62,7 @@
         </li>
 
         <li v-if="showNext" class="page-item disabled" role="seperator">
-            <span class="page-link">&hellip;</span>
+             <span class="page-link">&hellip;</span>
         </li>
 
         <li class="page-item" v-if="showNext">
@@ -156,7 +156,7 @@ import link from '@/components/link'
         },
         methods: {
             isActive(page) {
-                return page === this.currentPage;
+                return false; // page === this.currentPage;
             },
             setPage(e, num) {
                 if (disabled) {

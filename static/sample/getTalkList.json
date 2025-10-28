@@ -1,0 +1,118 @@
+{
+  "payload": {
+    "list": [
+      {
+        "seq": 1,
+        "title": "Vue.js 기초 학습 가이드",
+        "writer": "김철수",
+        "date": "2024-10-28",
+        "totalRows": 20
+      },
+      {
+        "seq": 2,
+        "title": "컴포넌트 라이프사이클 이해하기",
+        "writer": "이영희",
+        "date": "2024-10-27",
+        "totalRows": 20
+      },
+      {
+        "seq": 3,
+        "title": "Vue Router 사용법",
+        "writer": "박민수",
+        "date": "2024-10-26",
+        "totalRows": 20
+      },
+      {
+        "seq": 4,
+        "title": "Axios를 활용한 API 호출",
+        "writer": "최수진",
+        "date": "2024-10-25",
+        "totalRows": 20
+      },
+      {
+        "seq": 5,
+        "title": "Vuex 상태관리 시작하기",
+        "writer": "정우진",
+        "date": "2024-10-24",
+        "totalRows": 20
+      },
+      {
+        "seq": 6,
+        "title": "Webpack 설정 완벽 가이드",
+        "writer": "강미영",
+        "date": "2024-10-23",
+        "totalRows": 20
+      },
+      {
+        "seq": 7,
+        "title": "Bootstrap 연동하기",
+        "writer": "송현우",
+        "date": "2024-10-22",
+        "totalRows": 20
+      },
+      {
+        "seq": 8,
+        "title": "Chart.js로 데이터 시각화",
+        "writer": "윤혜진",
+        "date": "2024-10-21",
+        "totalRows": 20
+      },
+      {
+        "seq": 9,
+        "title": "페이징 처리 구현하기",
+        "writer": "오동현",
+        "date": "2024-10-20",
+        "totalRows": 20
+      },
+      {
+        "seq": 10,
+        "title": "Todo App 만들기",
+        "writer": "임서연",
+        "date": "2024-10-19",
+        "totalRows": 20
+      },
+      {
+        "seq": 11,
+        "title": "Pull to Refresh 구현",
+        "writer": "노재성",
+        "date": "2024-10-18",
+        "totalRows": 20
+      },
+      {
+        "seq": 12,
+        "title": "Hammer.js 제스처 활용",
+        "writer": "한지은",
+        "date": "2024-10-17",
+        "totalRows": 20
+      },
+      {
+        "seq": 13,
+        "title": "코드 스플리팅 전략",
+        "writer": "배성민",
+        "date": "2024-10-16",
+        "totalRows": 20
+      },
+      {
+        "seq": 14,
+        "title": "환경변수 관리하기",
+        "writer": "조하늘",
+        "date": "2024-10-15",
+        "totalRows": 20
+      },
+      {
+        "seq": 15,
+        "title": "빌드 최적화 기법",
+        "writer": "현준호",
+        "date": "2024-10-14",
+        "totalRows": 20
+      },
+      {
+        "seq": 16,
+        "title": "에러 핸들링 전략",
+        "writer": "문가을",
+        "date": "2024-10-13",
+        "totalRows": 20
+      }
+    ]
+  }
+}
